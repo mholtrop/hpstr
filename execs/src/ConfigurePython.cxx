@@ -59,10 +59,9 @@ ConfigurePython::ConfigurePython(const std::string& python_script, char* args[],
 #if PY_MAJOR_VERSION >= 3
       wchar_t** targs = new wchar_t*[nargs + 1];
       targs[0] = Py_DecodeLocale(python_script.c_str(),NULL);
-      for (int i = 0; i < nargs; i++){
-        std::cout << "Arg[" << i << "] = " << args[i] << "\n";
+      for (int i = 0; i < nargs; i++)
           targs[i + 1] = Py_DecodeLocale(args[i],NULL);
-      }
+      
       PySys_SetArgv(nargs+1, targs);
       delete[] targs;
 #else
@@ -71,7 +70,7 @@ ConfigurePython::ConfigurePython(const std::string& python_script, char* args[],
       for (int i = 0; i < nargs; i++)
           targs[i + 1] = args[i];
 
-      PySys_SetArgvEx(nargs, targs, 1);
+      PySys_SetArgvEx(nargs+1, targs, 1);
       delete[] targs;
 #endif
     }
