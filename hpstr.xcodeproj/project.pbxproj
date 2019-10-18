@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		405F07D223591F03007D11BD /* ConfigurePython.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 405F07CD23591EF7007D11BD /* ConfigurePython.cxx */; };
-		405F07D323591F0D007D11BD /* hpstr.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 405F07CE23591EF7007D11BD /* hpstr.cxx */; };
 		405F07D7235954ED007D11BD /* processingDef.h in Sources */ = {isa = PBXBuildFile; fileRef = 405F07D62359534B007D11BD /* processingDef.h */; };
+		407D81E6235A65350005D4E1 /* hpstr.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 405F07CE23591EF7007D11BD /* hpstr.cxx */; };
+		407D81E7235A65380005D4E1 /* ConfigurePython.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 405F07CD23591EF7007D11BD /* ConfigurePython.cxx */; };
+		407E34FF235A6647003265AB /* libprocessing.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 40BC150D21C6F0F7002B95DF /* libprocessing.dylib */; };
 		40911CA5234D1DAB006AD16F /* RawSvtHit.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 40911CA3234D1DAB006AD16F /* RawSvtHit.cxx */; };
 		40911CA6234D1DAB006AD16F /* RawSvtHit.h in Headers */ = {isa = PBXBuildFile; fileRef = 40911CA4234D1DAB006AD16F /* RawSvtHit.h */; };
 		40911CA9234D1DCC006AD16F /* SvtRawDataProcessor.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 40911CA7234D1DCC006AD16F /* SvtRawDataProcessor.cxx */; };
@@ -55,7 +56,6 @@
 		40D3002D21C3491500381AF5 /* EventLinkDef.h in Headers */ = {isa = PBXBuildFile; fileRef = 40D3002421C3491500381AF5 /* EventLinkDef.h */; };
 		40D3002E21C3491500381AF5 /* Track.h in Headers */ = {isa = PBXBuildFile; fileRef = 40D3002521C3491500381AF5 /* Track.h */; };
 		40D3002F21C3491500381AF5 /* CalCluster.h in Headers */ = {isa = PBXBuildFile; fileRef = 40D3002621C3491500381AF5 /* CalCluster.h */; };
-		40DA52CB21C428450035D296 /* libevent.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D3000421C3486700381AF5 /* libevent.dylib */; };
 		40DA52CE21C428970035D296 /* TriggerData.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 40DA52CC21C428970035D296 /* TriggerData.cxx */; };
 		40DA52CF21C428970035D296 /* EventHeader.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 40DA52CD21C428970035D296 /* EventHeader.cxx */; };
 		40DA52D221C428A20035D296 /* TriggerData.h in Headers */ = {isa = PBXBuildFile; fileRef = 40DA52D021C428A20035D296 /* TriggerData.h */; };
@@ -75,8 +75,6 @@
 		40E4979B23538E1300C18547 /* TrackHistos.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 40E4977823538D8600C18547 /* TrackHistos.cxx */; };
 		40E4979C23538E1300C18547 /* TrackHistos.h in Headers */ = {isa = PBXBuildFile; fileRef = 40E4977C23538D8600C18547 /* TrackHistos.h */; };
 		40E4979D23538EDD00C18547 /* libevent.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D3000421C3486700381AF5 /* libevent.dylib */; };
-		40E4979E23538EF400C18547 /* libprocessing.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 40BC150D21C6F0F7002B95DF /* libprocessing.dylib */; };
-		40E4979F23538EFA00C18547 /* libanalysis.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 40E4978A23538DDD00C18547 /* libanalysis.dylib */; };
 		40E497A023538F3B00C18547 /* libanalysis.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 40E4978A23538DDD00C18547 /* libanalysis.dylib */; };
 		40E5D0102358B5180050FB57 /* VTPData.h in Headers */ = {isa = PBXBuildFile; fileRef = 40E5D00A2358B5170050FB57 /* VTPData.h */; };
 		40E5D0112358B5180050FB57 /* VTPData.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 40E5D00B2358B5170050FB57 /* VTPData.cxx */; };
@@ -118,35 +116,26 @@
 /* End PBXBuildRule section */
 
 /* Begin PBXContainerItemProxy section */
-		40DA52C821C428380035D296 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 40D3FFF421C3475800381AF5 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 40D3000321C3486700381AF5;
-			remoteInfo = event;
-		};
-		40FE1E452353CB170075A4C1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 40D3FFF421C3475800381AF5 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 40E4978923538DDD00C18547;
-			remoteInfo = analysis;
-		};
-		40FE1E472353CB1D0075A4C1 /* PBXContainerItemProxy */ = {
+		407E3500235A66EF003265AB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 40D3FFF421C3475800381AF5 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 40BC150C21C6F0F7002B95DF;
 			remoteInfo = processing;
 		};
-		40FE1E492353CB220075A4C1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 40D3FFF421C3475800381AF5 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 406DB8C721C6D3AF007C8A8A;
-			remoteInfo = processors;
-		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		40A9155A235A5FF7005483AD /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		405F07CC23591EF7007D11BD /* ConfigurePython.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConfigurePython.h; path = execs/include/ConfigurePython.h; sourceTree = "<group>"; };
@@ -163,7 +152,6 @@
 		40911CAB234F65A8006AD16F /* HpsEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HpsEvent.h; path = include/HpsEvent.h; sourceTree = "<group>"; };
 		40911CAC234F65A8006AD16F /* IEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IEvent.h; path = include/IEvent.h; sourceTree = "<group>"; };
 		40911CAD234F65A8006AD16F /* HpsEvent.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HpsEvent.cxx; path = src/HpsEvent.cxx; sourceTree = "<group>"; };
-		40A076B421C4196A00A29625 /* hpstr */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = hpstr; sourceTree = BUILT_PRODUCTS_DIR; };
 		40A076BC21C41A3000A29625 /* Processor.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Processor.cxx; path = src/Processor.cxx; sourceTree = "<group>"; };
 		40A076BD21C41A3000A29625 /* ParameterSet.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ParameterSet.cxx; path = src/ParameterSet.cxx; sourceTree = "<group>"; };
 		40A076BE21C41A3000A29625 /* EventFile.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = EventFile.cxx; path = src/EventFile.cxx; sourceTree = "<group>"; };
@@ -175,6 +163,7 @@
 		40A076CD21C41A4000A29625 /* Processor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Processor.h; path = include/Processor.h; sourceTree = "<group>"; };
 		40A076CE21C41A4000A29625 /* ProcessorFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ProcessorFactory.h; path = include/ProcessorFactory.h; sourceTree = "<group>"; };
 		40A076D021C41A4B00A29625 /* HpstrConf.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; name = HpstrConf.py; path = python/HpstrConf.py; sourceTree = "<group>"; };
+		40A9155C235A5FF7005483AD /* hpstr */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = hpstr; sourceTree = BUILT_PRODUCTS_DIR; };
 		40AA4B7C223DE7B500777A43 /* rawSvtHits_cfg.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = rawSvtHits_cfg.py; path = processors/config/rawSvtHits_cfg.py; sourceTree = "<group>"; };
 		40AA4B7D223DE7B500777A43 /* dst.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = dst.py; path = processors/config/dst.py; sourceTree = "<group>"; };
 		40AE3D31234F6D9A00178209 /* HPSEventProcessor.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HPSEventProcessor.cxx; path = src/HPSEventProcessor.cxx; sourceTree = "<group>"; };
@@ -194,7 +183,6 @@
 		40BC150121C6D431002B95DF /* ECalDataProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECalDataProcessor.h; path = include/ECalDataProcessor.h; sourceTree = "<group>"; };
 		40BC150221C6D431002B95DF /* EventProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventProcessor.h; path = include/EventProcessor.h; sourceTree = "<group>"; };
 		40BC150D21C6F0F7002B95DF /* libprocessing.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libprocessing.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
-		40BC152121C6F2CC002B95DF /* Python.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Python.framework; path = System/Library/Frameworks/Python.framework; sourceTree = SDKROOT; };
 		40D3000421C3486700381AF5 /* libevent.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libevent.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		40D3001221C3490500381AF5 /* CalHit.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CalHit.cxx; path = src/CalHit.cxx; sourceTree = "<group>"; };
 		40D3001321C3490500381AF5 /* TrackerHit.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TrackerHit.cxx; path = src/TrackerHit.cxx; sourceTree = "<group>"; };
@@ -248,13 +236,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		40A076B121C4196A00A29625 /* Frameworks */ = {
+		40A91559235A5FF7005483AD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40E4979F23538EFA00C18547 /* libanalysis.dylib in Frameworks */,
-				40E4979E23538EF400C18547 /* libprocessing.dylib in Frameworks */,
-				40DA52CB21C428450035D296 /* libevent.dylib in Frameworks */,
+				407E34FF235A6647003265AB /* libprocessing.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,10 +356,10 @@
 			isa = PBXGroup;
 			children = (
 				40D3000421C3486700381AF5 /* libevent.dylib */,
-				40A076B421C4196A00A29625 /* hpstr */,
 				406DB8C821C6D3AF007C8A8A /* libprocessors.dylib */,
 				40BC150D21C6F0F7002B95DF /* libprocessing.dylib */,
 				40E4978A23538DDD00C18547 /* libanalysis.dylib */,
+				40A9155C235A5FF7005483AD /* hpstr */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -443,7 +429,6 @@
 		40DA52CA21C428450035D296 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				40BC152121C6F2CC002B95DF /* Python.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -533,25 +518,23 @@
 			productReference = 406DB8C821C6D3AF007C8A8A /* libprocessors.dylib */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
-		40A076B321C4196A00A29625 /* hpstr */ = {
+		40A9155B235A5FF7005483AD /* hpstr */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 40A076BA21C4196A00A29625 /* Build configuration list for PBXNativeTarget "hpstr" */;
+			buildConfigurationList = 40A91560235A5FF7005483AD /* Build configuration list for PBXNativeTarget "hpstr" */;
 			buildPhases = (
-				40A076B021C4196A00A29625 /* Sources */,
-				40A076B121C4196A00A29625 /* Frameworks */,
-				40DA52D521C429140035D296 /* ShellScript */,
+				40A91558235A5FF7005483AD /* Sources */,
+				40A91559235A5FF7005483AD /* Frameworks */,
+				40A9155A235A5FF7005483AD /* CopyFiles */,
+				407E3502235A7D5A003265AB /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				40DA52C921C428380035D296 /* PBXTargetDependency */,
-				40FE1E462353CB170075A4C1 /* PBXTargetDependency */,
-				40FE1E482353CB1D0075A4C1 /* PBXTargetDependency */,
-				40FE1E4A2353CB220075A4C1 /* PBXTargetDependency */,
+				407E3501235A66EF003265AB /* PBXTargetDependency */,
 			);
 			name = hpstr;
 			productName = hpstr;
-			productReference = 40A076B421C4196A00A29625 /* hpstr */;
+			productReference = 40A9155C235A5FF7005483AD /* hpstr */;
 			productType = "com.apple.product-type.tool";
 		};
 		40BC150C21C6F0F7002B95DF /* processing */ = {
@@ -621,8 +604,8 @@
 					406DB8C721C6D3AF007C8A8A = {
 						CreatedOnToolsVersion = 10.1;
 					};
-					40A076B321C4196A00A29625 = {
-						CreatedOnToolsVersion = 10.1;
+					40A9155B235A5FF7005483AD = {
+						CreatedOnToolsVersion = 11.1;
 					};
 					40BC150C21C6F0F7002B95DF = {
 						CreatedOnToolsVersion = 10.1;
@@ -651,7 +634,7 @@
 				40BC150C21C6F0F7002B95DF /* processing */,
 				40E4978923538DDD00C18547 /* analysis */,
 				406DB8C721C6D3AF007C8A8A /* processors */,
-				40A076B321C4196A00A29625 /* hpstr */,
+				40A9155B235A5FF7005483AD /* hpstr */,
 			);
 		};
 /* End PBXProject section */
@@ -673,6 +656,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "echo \"Copy ${FULL_PRODUCT_NAME} to final destination.\"\ncp -v ${BUILT_PRODUCTS_DIR}/${FULL_PRODUCT_NAME} ${INSTALL_DIR}\n# cp -v ${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}Dict_rdict.pcm ${INSTALL_DIR}\n# Type a script or drag a script file from your workspace to insert its path.\n";
+			showEnvVarsInLog = 0;
+		};
+		407E3502235A7D5A003265AB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\necho \"Copy ${FULL_PRODUCT_NAME} to final destination.\"\ncp -v ${BUILT_PRODUCTS_DIR}/${FULL_PRODUCT_NAME} ${INSTALL_DIR}\n";
 			showEnvVarsInLog = 0;
 		};
 		40D02EA921C6F97600ABDC88 /* ShellScript */ = {
@@ -728,24 +729,6 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\necho \"Copy to final destination.\"\ncp -v ${BUILT_PRODUCTS_DIR}/${FULL_PRODUCT_NAME} ${INSTALL_DIR}\ncp -v ${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}Dict_rdict.pcm ${INSTALL_DIR}\n";
 		};
-		40DA52D521C429140035D296 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\necho \"Copy to final destination.\"\ncp -v ${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME} ${INSTALL_DIR}\necho ${PRODUCT_NAME}\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -765,12 +748,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		40A076B021C4196A00A29625 /* Sources */ = {
+		40A91558235A5FF7005483AD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				405F07D223591F03007D11BD /* ConfigurePython.cxx in Sources */,
-				405F07D323591F0D007D11BD /* hpstr.cxx in Sources */,
+				407D81E7235A65380005D4E1 /* ConfigurePython.cxx in Sources */,
+				407D81E6235A65350005D4E1 /* hpstr.cxx in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -823,25 +806,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		40DA52C921C428380035D296 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 40D3000321C3486700381AF5 /* event */;
-			targetProxy = 40DA52C821C428380035D296 /* PBXContainerItemProxy */;
-		};
-		40FE1E462353CB170075A4C1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 40E4978923538DDD00C18547 /* analysis */;
-			targetProxy = 40FE1E452353CB170075A4C1 /* PBXContainerItemProxy */;
-		};
-		40FE1E482353CB1D0075A4C1 /* PBXTargetDependency */ = {
+		407E3501235A66EF003265AB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 40BC150C21C6F0F7002B95DF /* processing */;
-			targetProxy = 40FE1E472353CB1D0075A4C1 /* PBXContainerItemProxy */;
-		};
-		40FE1E4A2353CB220075A4C1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 406DB8C721C6D3AF007C8A8A /* processors */;
-			targetProxy = 40FE1E492353CB220075A4C1 /* PBXContainerItemProxy */;
+			targetProxy = 407E3500235A66EF003265AB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -860,19 +828,17 @@
 			};
 			name = Release;
 		};
-		40A076B821C4196A00A29625 /* Debug */ = {
+		40A91561235A5FF7005483AD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 40D3FFFE21C347B300381AF5 /* hpstr_main.xcconfig */;
 			buildSettings = {
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
 			};
 			name = Debug;
 		};
-		40A076B921C4196A00A29625 /* Release */ = {
+		40A91562235A5FF7005483AD /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 40D3FFFE21C347B300381AF5 /* hpstr_main.xcconfig */;
 			buildSettings = {
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
 			};
 			name = Release;
 		};
@@ -920,8 +886,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 408D7D1A21C401FF006556DB /* hpstr_event.xcconfig */;
 			buildSettings = {
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
 			};
 			name = Debug;
 		};
@@ -929,8 +893,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 408D7D1A21C401FF006556DB /* hpstr_event.xcconfig */;
 			buildSettings = {
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
 			};
 			name = Release;
 		};
@@ -946,11 +908,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		40A076BA21C4196A00A29625 /* Build configuration list for PBXNativeTarget "hpstr" */ = {
+		40A91560235A5FF7005483AD /* Build configuration list for PBXNativeTarget "hpstr" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				40A076B821C4196A00A29625 /* Debug */,
-				40A076B921C4196A00A29625 /* Release */,
+				40A91561235A5FF7005483AD /* Debug */,
+				40A91562235A5FF7005483AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

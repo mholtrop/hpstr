@@ -56,16 +56,24 @@ ConfigurePython::ConfigurePython(const std::string& python_script, char* args[],
     // executed. Note that the first parameter in the list or arguments 
     // should refer to the script to be executed.
     if (nargs > 0) {
-        char** targs = new char*[nargs + 1];
-        targs[0] = (char*) python_script.c_str();
-        for (int i = 0; i < nargs; i++)
-            targs[i + 1] = args[i];
 #if PY_MAJOR_VERSION >= 3
-      PySys_SetArgv(nargs, (wchar_t **)targs);
+      wchar_t** targs = new wchar_t*[nargs + 1];
+      targs[0] = Py_DecodeLocale(python_script.c_str(),NULL);
+      for (int i = 0; i < nargs; i++){
+        std::cout << "Arg[" << i << "] = " << args[i] << "\n";
+          targs[i + 1] = Py_DecodeLocale(args[i],NULL);
+      }
+      PySys_SetArgv(nargs+1, targs);
+      delete[] targs;
 #else
+      char** targs = new char*[nargs + 1];
+      targs[0] = (char*) python_script.c_str();
+      for (int i = 0; i < nargs; i++)
+          targs[i + 1] = args[i];
+
       PySys_SetArgvEx(nargs, targs, 1);
+      delete[] targs;
 #endif
-        delete[] targs;
     }
 
     PyObject* script = nullptr; 
@@ -73,19 +81,19 @@ ConfigurePython::ConfigurePython(const std::string& python_script, char* args[],
     PyObject* p_main = nullptr; 
     PyObject* py_list = nullptr; 
     PyObject* p_process = nullptr; 
-
-    // Load the python script. 
-    script = PyImport_ImportModule(cmd.c_str());
-    Py_DECREF(script);
   
     try { 
-
+      // Load the python script.
+      script = PyImport_ImportModule(cmd.c_str());
+      
     // If a reference to the python script couldn't be created, raise 
     // an exception.  
-    if (script == 0) {
+     if (script == 0) {
         PyErr_Print();
         throw std::runtime_error("[ ConfigurePython ]: Problem loading python script."); 
     }
+
+    Py_DECREF(script);
 
     // Load the script that is used create a processor
     PyObject* pCMod = PyObject_GetAttrString(script, "HpstrConf");

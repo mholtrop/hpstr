@@ -12,11 +12,11 @@
 //  Created by Maurik Holtrop on 12/14/2018
 //
 // ======= ROOT 6 ==============
-ROOTSYS=/Users/maurik/root/root.git.py2
-ROOTLIBS=-L${ROOTSYS}/lib -lCore -lRIO -lNet -lHist -lGraf -lGraf3d -lGpad -lTree -lRint -lPostscript -lMatrix -lPhysics -lMathCore -lThread -lMultiProc -lProof -lpthread -stdlib=libc++ -lm -ldl
-
-// === Always include ROOT
-
+//ROOTSYS=/Users/maurik/root/root.git
+//ROOTLIBS=-L${ROOTSYS}/lib -lCore -lRIO -lNet -lHist -lGraf -lGraf3d -lGpad -lTree -lRint -lPostscript -lMatrix -lPhysics -lMathCore -lThread -lMultiProc -lProof -lpthread -stdlib=libc++ -lm -ldl
+//
+//// === Always include ROOT
+//
 HEADER_SEARCH_PATHS=$(inherited) ${ROOTSYS}/include
 LIBRARY_SEARCH_PATHS=$(inherited) ${ROOTSYS}/lib
 OTHER_LDFLAGS= ${ROOTLIBS}

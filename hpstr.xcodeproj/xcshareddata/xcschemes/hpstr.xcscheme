@@ -56,7 +56,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "40A076B321C4196A00A29625"
+               BlueprintIdentifier = "40A9155B235A5FF7005483AD"
                BuildableName = "hpstr"
                BlueprintName = "hpstr"
                ReferencedContainer = "container:hpstr.xcodeproj">
@@ -72,7 +72,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "40A076B321C4196A00A29625"
+            BlueprintIdentifier = "40A9155B235A5FF7005483AD"
             BuildableName = "hpstr"
             BlueprintName = "hpstr"
             ReferencedContainer = "container:hpstr.xcodeproj">
@@ -96,7 +96,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "40A076B321C4196A00A29625"
+            BlueprintIdentifier = "40A9155B235A5FF7005483AD"
             BuildableName = "hpstr"
             BlueprintName = "hpstr"
             ReferencedContainer = "container:hpstr.xcodeproj">
@@ -104,7 +104,7 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "/data/HPS/HPS_Analysis/hpstr/processors/config/dst.py"
+            argument = "/data/HPS/HPS_Analysis/hpstr/dst.py"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
@@ -115,12 +115,12 @@
       <EnvironmentVariables>
          <EnvironmentVariable
             key = "DYLD_LIBRARY_PATH"
-            value = "/Users/maurik/root/root.git.py2/lib:/data/HPS/HPS_Analysis/Debug"
+            value = "/Users/maurik/root/root.git/lib:/data/HPS/HPS_Analysis/Debug"
             isEnabled = "YES">
          </EnvironmentVariable>
          <EnvironmentVariable
             key = "PYTHONPATH"
-            value = "/data/HPS/HPS_Analysis/hpstr/processing/python"
+            value = "/data/HPS/HPS_Analysis/hpstr/lib/python"
             isEnabled = "YES">
          </EnvironmentVariable>
       </EnvironmentVariables>
@@ -135,7 +135,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "40A076B321C4196A00A29625"
+            BlueprintIdentifier = "40A9155B235A5FF7005483AD"
             BuildableName = "hpstr"
             BlueprintName = "hpstr"
             ReferencedContainer = "container:hpstr.xcodeproj">

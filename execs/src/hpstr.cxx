@@ -28,8 +28,6 @@ int main(int argc, char **argv) {
         displayUsage(); 
         return EXIT_FAILURE;
     }
-
-    bool processRoot = false;
     
     int ptrpy = 1;
     for (ptrpy = 1; ptrpy < argc; ptrpy++) {
@@ -48,7 +46,7 @@ int main(int argc, char **argv) {
         
         std::cout << "---- [ hpstr ]: Loading configuration --------" << std::endl;
         
-        ConfigurePython cfg(argv[ptrpy], argv + ptrpy + 1, argc - ptrpy);
+        ConfigurePython cfg(argv[ptrpy], argv + ptrpy + 1, argc - ptrpy -1);
 
         std::cout << "---- [ hpstr ]: Configuration load complete  --------" << std::endl;
 

@@ -6,12 +6,15 @@
 //  Copyright 2010 University of New Hampshire. All rights reserved.
 //
 #include "../master.xcconfig"
-PRODUCT_NAME=hpstr
+PRODUCT_NAME=${TARGET_NAME} 
 EXECUTABLE_PREFIX=
 
+PYTHON_VERSION=/usr/local/Frameworks/Python.framework/Versions/3.7
+
 // == Activate LCIO and Python
-HEADER_SEARCH_PATHS=$(inherited) ${LCIO}/include ///usr/local/Cellar/python/3.6.5/Frameworks/Python.framework/Versions/3.6/include/python3.6m
+HEADER_SEARCH_PATHS=$(inherited) ${LCIO}/include ${PYTHON_VERSION}/include/python3.7m
+
 LIBRARY_SEARCH_PATHS=$(inherited) ${LCIOLIBDIR}
-OTHER_LDFLAGS=$(inherited) ${LCIOLIBS} -lpython2.7 -ldl -framework CoreFoundation
-OTHER_CPLUSPLUSFLAGS = $(inherited) -iwithsysroot /System/Library/Frameworks/Python.framework/Versions/2.7/include/python2.7
+OTHER_LDFLAGS=$(inherited) ${LCIOLIBS}  -ldl -framework CoreFoundation ${PYTHON_VERSION}/lib/libpython3.7.dylib
+
 //HEADER_SEARCH_PATHS=$(inherited) ${HPSTR}/event/include
