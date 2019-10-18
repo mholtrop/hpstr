@@ -12,7 +12,13 @@ static std::string stringMember(PyObject* owner, const std::string& name) {
     std::string retval;
     PyObject* temp = PyObject_GetAttrString(owner, name.c_str());
     if (temp != 0) {
+#if PY_MAJOR_VERSION >= 3
+      PyObject* pyStr = PyUnicode_AsEncodedString(temp, "utf-8","Error ~");
+      retval = PyBytes_AS_STRING(pyStr);
+      Py_XDECREF(pyStr);
+#else
         retval = PyString_AsString(temp);
+#endif
         Py_DECREF(temp);
     }
     return retval;
@@ -24,7 +30,7 @@ static long intMember(PyObject* owner, const std::string& name) {
     long retval;
     PyObject* temp = PyObject_GetAttrString(owner, name.c_str());
     if (temp != 0) {
-        retval = PyInt_AsLong(temp);
+        retval = PyLong_AsLong(temp);
         Py_DECREF(temp);
     }
     return retval;
@@ -54,7 +60,11 @@ ConfigurePython::ConfigurePython(const std::string& python_script, char* args[],
         targs[0] = (char*) python_script.c_str();
         for (int i = 0; i < nargs; i++)
             targs[i + 1] = args[i];
-        PySys_SetArgvEx(nargs, targs, 1);
+#if PY_MAJOR_VERSION >= 3
+      PySys_SetArgv(nargs, (wchar_t **)targs);
+#else
+      PySys_SetArgvEx(nargs, targs, 1);
+#endif
         delete[] targs;
     }
 
@@ -118,6 +128,50 @@ ConfigurePython::ConfigurePython(const std::string& python_script, char* args[],
             Py_ssize_t pos = 0;
 
             while (PyDict_Next(params, &pos, &key, &value)) {
+#if PY_MAJOR_VERSION >= 3
+              PyObject* pyStr = PyUnicode_AsEncodedString(key, "utf-8","Error ~");
+              std::string skey = PyBytes_AS_STRING(pyStr);
+
+               if (PyLong_Check(value)) {
+                   pi.params_.insert(skey, int(PyLong_AsLong(value)));
+                   //printf("Int Key: %s\n",skey.c_str());
+               } else if (PyFloat_Check(value)) {
+                   pi.params_.insert(skey, PyFloat_AsDouble(value));
+                   //printf("Double Key: %s\n",skey.c_str());
+               } else if (PyUnicode_Check(value)) {
+                   PyObject* pyStr = PyUnicode_AsEncodedString(value, "utf-8","Error ~");
+                   pi.params_.insert(skey, PyBytes_AS_STRING(pyStr));
+                   Py_XDECREF(pyStr);
+                   //printf("String Key: %s\n",skey.c_str());
+               } else if (PyList_Check(value)) { // assume everything is same value as first value
+                   if (PyList_Size(value) > 0) {
+                       PyObject* vec0 = PyList_GetItem(value, 0);
+                       if (PyLong_Check(vec0)) {
+                           std::vector<int> vals;
+                           for (Py_ssize_t j = 0; j < PyList_Size(value); j++)
+                               vals.push_back(PyLong_AsLong(PyList_GetItem(value, j)));
+                           pi.params_.insert(skey, vals);
+                           //printf("VInt Key: %s\n",skey.c_str());
+                       } else if (PyFloat_Check(vec0)) {
+                           std::vector<double> vals;
+                           for (Py_ssize_t j = 0; j < PyList_Size(value); j++)
+                               vals.push_back(PyFloat_AsDouble(PyList_GetItem(value, j)));
+                           pi.params_.insert(skey, vals);
+                           //printf("VDouble Key: %s\n",skey.c_str());
+                       } else if (PyUnicode_Check(vec0)) {
+                           std::vector<std::string> vals;
+                           for (Py_ssize_t j = 0; j < PyList_Size(value); j++){
+                               PyObject* pyStr = PyUnicode_AsEncodedString(PyList_GetItem(value, j), "utf-8","Error ~");
+                               vals.push_back( PyBytes_AS_STRING(pyStr));
+                                Py_XDECREF(pyStr);
+                           }
+                           pi.params_.insert(skey, vals);
+                           //printf("VString Key: %s\n",skey.c_str());
+                       }
+                   }
+               }
+
+#else
                 std::string skey = PyString_AsString(key);
                 if (PyInt_Check(value)) {
                     pi.params_.insert(skey, int(PyInt_AsLong(value)));
@@ -152,6 +206,7 @@ ConfigurePython::ConfigurePython(const std::string& python_script, char* args[],
                         }
                     }
                 }
+#endif
             }
         }
 
@@ -166,7 +221,13 @@ ConfigurePython::ConfigurePython(const std::string& python_script, char* args[],
     }
     for (Py_ssize_t i = 0; i < PyList_Size(py_list); i++) {
         PyObject* elem = PyList_GetItem(py_list, i);
+#if PY_MAJOR_VERSION >= 3
+        PyObject* pyStr = PyUnicode_AsEncodedString(elem, "utf-8","Error ~");
+        input_files_.push_back(PyBytes_AS_STRING(pyStr));
+        Py_XDECREF(pyStr);
+#else
         input_files_.push_back(PyString_AsString(elem));
+#endif
     }
     Py_DECREF(py_list);
 
@@ -177,7 +238,13 @@ ConfigurePython::ConfigurePython(const std::string& python_script, char* args[],
     }
     for (Py_ssize_t i = 0; i < PyList_Size(py_list); i++) {
         PyObject* elem = PyList_GetItem(py_list, i);
+#if PY_MAJOR_VERSION >= 3
+        PyObject* pyStr = PyUnicode_AsEncodedString(elem, "utf-8","Error ~");
+        output_files_.push_back(PyBytes_AS_STRING(pyStr));
+        Py_XDECREF(pyStr);
+#else
         output_files_.push_back(PyString_AsString(elem));
+#endif
     }
     Py_DECREF(py_list);
 
@@ -188,7 +255,13 @@ ConfigurePython::ConfigurePython(const std::string& python_script, char* args[],
     }
     for (Py_ssize_t i = 0; i < PyList_Size(py_list); i++) {
         PyObject* elem = PyList_GetItem(py_list, i);
-        libraries_.push_back(PyString_AsString(elem));
+#if PY_MAJOR_VERSION >= 3
+        PyObject* pyStr = PyUnicode_AsEncodedString(elem, "utf-8","Error ~");
+        libraries_.push_back(PyBytes_AS_STRING(pyStr));
+        Py_XDECREF(pyStr);
+#else
+      libraries_.push_back(PyString_AsString(elem));
+#endif
     }
     Py_DECREF(py_list);
 

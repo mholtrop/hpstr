@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		405F07D223591F03007D11BD /* ConfigurePython.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 405F07CD23591EF7007D11BD /* ConfigurePython.cxx */; };
 		405F07D323591F0D007D11BD /* hpstr.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 405F07CE23591EF7007D11BD /* hpstr.cxx */; };
+		405F07D7235954ED007D11BD /* processingDef.h in Sources */ = {isa = PBXBuildFile; fileRef = 405F07D62359534B007D11BD /* processingDef.h */; };
 		40911CA5234D1DAB006AD16F /* RawSvtHit.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 40911CA3234D1DAB006AD16F /* RawSvtHit.cxx */; };
 		40911CA6234D1DAB006AD16F /* RawSvtHit.h in Headers */ = {isa = PBXBuildFile; fileRef = 40911CA4234D1DAB006AD16F /* RawSvtHit.h */; };
 		40911CA9234D1DCC006AD16F /* SvtRawDataProcessor.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 40911CA7234D1DCC006AD16F /* SvtRawDataProcessor.cxx */; };
@@ -89,7 +90,7 @@
 		4077E06C21C72EF400F46720 /* PBXBuildRule */ = {
 			isa = PBXBuildRule;
 			compilerSpec = com.apple.compilers.proxy.script;
-			filePatterns = "*LinkDef.h";
+			filePatterns = "*.h";
 			fileType = pattern.proxy;
 			inputFiles = (
 			);
@@ -98,7 +99,7 @@
 				"$(DERIVED_FILE_DIR)/${PRODUCT_MODULE_NAME}Dict.cpp",
 				"$(DERIVED_FILE_DIR)/${PRODUCT_MODULE_NAME}Dict_rdict.pcm",
 			);
-			script = "#\n# Script to create the dictionary for a multi class LinkDef file.\n# The names of the header files are extracted from the LinkDef file.\n# The name of the dictionary files will be based on the PRODUCT_MODULE_NAME\n#\necho \"INPUT_FILE_NAME = ${INPUT_FILE_NAME}\"\necho \"INPUT_FILE_BASE = ${INPUT_FILE_BASE}\"\necho \"PRODUCT_MODULE_NAME = ${PRODUCT_MODULE_NAME}\"\nHEADER_LIST=`cat ${INPUT_FILE_DIR}/${INPUT_FILE_NAME} | gawk '/pragma *link *C++.*class /{a=$5;print gensub(/+;/,\"\",\"g\",a)\".h\" }' `\necho \"HEADER_LIST = ${HEADER_LIST}\"\nHEADER_LIST_FULL=`for i in $HEADER_LIST; do echo ${INPUT_FILE_DIR}/${i}; done`\necho \"HEADER_LIST_FULL = ${HEADER_LIST_FULL}\"\necho ${ROOTSYS}/bin/rootcint -f ${DERIVED_FILE_DIR}/${PRODUCT_MODULE_NAME}Dict.cpp -c -p -I${HEADER_SEARCH_PATHS// / -I} ${HEADER_LIST_FULL} ${INPUT_FILE_DIR}/${INPUT_FILE_NAME}\n\n${ROOTSYS}/bin/rootcint -f ${DERIVED_FILE_DIR}/${PRODUCT_MODULE_NAME}Dict.cpp -c -p -I${HEADER_SEARCH_PATHS// / -I} ${HEADER_LIST_FULL} ${INPUT_FILE_DIR}/${INPUT_FILE_NAME}\n\n\n# For ROOT 6 copy the pcm file to the LIB install path.\ntest -d ${DYLIB_INSTALL_NAME_BASE} || mkdir -p ${DYLIB_INSTALL_NAME_BASE}\ntest -d ${BUILT_PRODUCTS_DIR} || mkdir -p ${BUILT_PRODUCTS_DIR}\n# ls ${DERIVED_FILE_DIR}\n# This puts the pcm files in the ${DSTROOT}/${INSTALL_PATH} directory.\necho \"Send dict file to: \" ${DYLIB_INSTALL_NAME_BASE}\nif test -r ${DERIVED_FILE_DIR}/${PRODUCT_MODULE_NAME}Dict_rdict.pcm; then cp -f ${DERIVED_FILE_DIR}/${PRODUCT_MODULE_NAME}Dict_rdict.pcm ${DYLIB_INSTALL_NAME_BASE}/${PRODUCT_MODULE_NAME}Dict_rdict.pcm ; fi\n# cp  ${DERIVED_FILE_DIR}/${DICT_BASE_NAME}Dict_rdict.pcm ${DYLIB_INSTALL_NAME_BASE}\n# This send the pcm files to to build product dir\necho \"Send file rdict.pcm to: \" ${BUILT_PRODUCTS_DIR}\nif test -r ${DERIVED_FILE_DIR}/${PRODUCT_MODULE_NAME}Dict_rdict.pcm; then cp -f ${DERIVED_FILE_DIR}/${PRODUCT_MODULE_NAME}Dict_rdict.pcm ${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}Dict_rdict.pcm ; fi\n";
+			script = "# This rule creates the dictionaries for a ROOT based library.\n#\n# This one is a variant on the \"EvioTool\" version: \n#   The input file is \"Event.h\", but the files used to create the \n#   dictionaries are: EventDef.h and EventLinkDef.h\n#\n# As input it needs the header file for the class that needs a dictionary, i.e. myclass.h\n# Each of these header files needs a \"LinkDef\" file: <myclass>LinkDef.h\n# To allow multiple classes, with separate headers, in one dictionary file,\n# it needs a  <myclass>Def.h where all the headers are included.\n#\n# The output will be <myclass>Dict.cpp and <myclass>Dict_rdict.pcm\n# The cpp files must be compiled and included in the library. The rdict.pcm must be copied\n# to the install location of the library.\n#\n# The script depends on ROOTSYS being defined in the project.\n#\n# export\nOUTFILES_LOCATION=${DERIVED_FILE_DIR}\nLINKDEF_FILE=${INPUT_FILE_BASE/Def/}LinkDef.h\nHEADER_DEF_FILE=${INPUT_FILE_BASE}.h\nOUTPUT_FILE=${INPUT_FILE_BASE/Def/}Dict.cpp\necho \"INPUT_FILE_PATH: \" ${INPUT_FILE_PATH} \necho \"Dictionary created in: \" ${OUTFILES_LOCATION}\necho \"INPUT_FILE_BASE = \" ${INPUT_FILE_BASE}\necho \"INSTALL_DIR = \" ${INSTALL_DIR}\necho \"OUTPUT_FILE = \" ${OUTPUT_FILE} \n#\necho ${ROOTSYS}/bin/rootcling -f ${OUTFILES_LOCATION}/${OUTPUT_FILE} -c -p -I${HEADER_SEARCH_PATHS// / -I} ${INPUT_FILE_DIR}/${HEADER_DEF_FILE} ${INPUT_FILE_DIR}/${LINKDEF_FILE}\n${ROOTSYS}/bin/rootcling -f ${OUTFILES_LOCATION}/${OUTPUT_FILE} -c -p -I${HEADER_SEARCH_PATHS// / -I} ${INPUT_FILE_DIR}/${HEADER_DEF_FILE} ${INPUT_FILE_DIR}/${LINKDEF_FILE}\n#\n# For ROOT 6 copy the pcm file to the LIB install path.\n#\ntest -d ${DYLIB_INSTALL_NAME_BASE} || mkdir -p ${DYLIB_INSTALL_NAME_BASE}\ntest -d ${BUILT_PRODUCTS_DIR} || mkdir -p ${BUILT_PRODUCTS_DIR}\n# ls ${DERIVED_FILE_DIR}\n# This puts the pcm files in the ${DSTROOT}/${INSTALL_PATH} directory.\nif test -r ${OUTFILES_LOCATION}/${INPUT_FILE_BASE}Dict_rdict.pcm; then cp -f ${OUTFILES_LOCATION}/${INPUT_FILE_BASE}Dict_rdict.pcm ${DYLIB_INSTALL_NAME_BASE}/${INPUT_FILE_BASE}Dict_rdict.pcm; echo \"Copied: \" ${OUTFILES_LOCATION}/${INPUT_FILE_BASE}Dict_rdict.pcm ${DYLIB_INSTALL_NAME_BASE}/${INPUT_FILE_BASE}Dict_rdict.pcm ; fi\n# This send the pcm files to to build product dir\nif test -r ${OUTFILES_LOCATION}/${INPUT_FILE_BASE}Dict_rdict.pcm; then cp -f ${OUTFILES_LOCATION}/${INPUT_FILE_BASE}Dict_rdict.pcm ${BUILT_PRODUCTS_DIR}/${INPUT_FILE_BASE}Dict_rdict.pcm; echo \"Copied:\" cp -f ${OUTFILES_LOCATION}/${INPUT_FILE_BASE}Dict_rdict.pcm   ${BUILT_PRODUCTS_DIR}/${INPUT_FILE_BASE}Dict_rdict.pcm; fi\n\n";
 		};
 		40D3003021C34AE300381AF5 /* PBXBuildRule */ = {
 			isa = PBXBuildRule;
@@ -151,6 +152,8 @@
 		405F07CC23591EF7007D11BD /* ConfigurePython.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConfigurePython.h; path = execs/include/ConfigurePython.h; sourceTree = "<group>"; };
 		405F07CD23591EF7007D11BD /* ConfigurePython.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ConfigurePython.cxx; path = execs/src/ConfigurePython.cxx; sourceTree = "<group>"; };
 		405F07CE23591EF7007D11BD /* hpstr.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = hpstr.cxx; path = execs/src/hpstr.cxx; sourceTree = "<group>"; };
+		405F07D4235930FC007D11BD /* processingLinkDef.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = processingLinkDef.h; path = include/processingLinkDef.h; sourceTree = "<group>"; };
+		405F07D62359534B007D11BD /* processingDef.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = processingDef.h; path = include/processingDef.h; sourceTree = "<group>"; };
 		406DB8C821C6D3AF007C8A8A /* libprocessors.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libprocessors.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		408D7D1A21C401FF006556DB /* hpstr_event.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = hpstr_event.xcconfig; sourceTree = "<group>"; };
 		40911CA3234D1DAB006AD16F /* RawSvtHit.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RawSvtHit.cxx; path = src/RawSvtHit.cxx; sourceTree = "<group>"; };
@@ -323,6 +326,8 @@
 				40A076CD21C41A4000A29625 /* Processor.h */,
 				40A076C221C41A3000A29625 /* ProcessorFactory.cxx */,
 				40A076CE21C41A4000A29625 /* ProcessorFactory.h */,
+				405F07D4235930FC007D11BD /* processingLinkDef.h */,
+				405F07D62359534B007D11BD /* processingDef.h */,
 			);
 			path = processing;
 			sourceTree = "<group>";
@@ -773,6 +778,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				405F07D7235954ED007D11BD /* processingDef.h in Sources */,
 				40E497632353885300C18547 /* HpsEventFile.cxx in Sources */,
 				40BC151A21C6F18C002B95DF /* EventFile.cxx in Sources */,
 				40BC151E21C6F1AA002B95DF /* ProcessorFactory.cxx in Sources */,
@@ -786,8 +792,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40E5D0112358B5180050FB57 /* VTPData.cxx in Sources */,
 				40E49760235383CC00C18547 /* Event.h in Sources */,
+				40E5D0112358B5180050FB57 /* VTPData.cxx in Sources */,
 				40D3001A21C3490500381AF5 /* Event.cxx in Sources */,
 				40D3001921C3490500381AF5 /* TrackerHit.cxx in Sources */,
 				40D3001821C3490500381AF5 /* CalHit.cxx in Sources */,
