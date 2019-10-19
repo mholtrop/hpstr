@@ -45,13 +45,8 @@ int main(int argc, char **argv) {
     try {
 
         std::cout << "---- [ hpstr ]: Loading configuration --------" << std::endl;
-<<<<<<< HEAD:execs/src/hpstr.cxx
         
         ConfigurePython cfg(argv[ptrpy], argv + ptrpy + 1, argc - ptrpy -1);
-=======
-
-        ConfigurePython cfg(argv[ptrpy], argv + ptrpy + 1, argc - ptrpy);
->>>>>>> master:processing/src/hpstr.cxx
 
         std::cout << "---- [ hpstr ]: Configuration load complete  --------" << std::endl;
 

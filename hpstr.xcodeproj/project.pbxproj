@@ -11,6 +11,8 @@
 		407D81E6235A65350005D4E1 /* hpstr.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 405F07CE23591EF7007D11BD /* hpstr.cxx */; };
 		407D81E7235A65380005D4E1 /* ConfigurePython.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 405F07CD23591EF7007D11BD /* ConfigurePython.cxx */; };
 		407E34FF235A6647003265AB /* libprocessing.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 40BC150D21C6F0F7002B95DF /* libprocessing.dylib */; };
+		407E3505235A8D1B003265AB /* MCParticle.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 407E3503235A8D1A003265AB /* MCParticle.cxx */; };
+		407E3506235A8D1B003265AB /* MCParticle.h in Headers */ = {isa = PBXBuildFile; fileRef = 407E3504235A8D1B003265AB /* MCParticle.h */; };
 		40911CA5234D1DAB006AD16F /* RawSvtHit.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 40911CA3234D1DAB006AD16F /* RawSvtHit.cxx */; };
 		40911CA6234D1DAB006AD16F /* RawSvtHit.h in Headers */ = {isa = PBXBuildFile; fileRef = 40911CA4234D1DAB006AD16F /* RawSvtHit.h */; };
 		40911CA9234D1DCC006AD16F /* SvtRawDataProcessor.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 40911CA7234D1DCC006AD16F /* SvtRawDataProcessor.cxx */; };
@@ -144,6 +146,8 @@
 		405F07D4235930FC007D11BD /* processingLinkDef.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = processingLinkDef.h; path = include/processingLinkDef.h; sourceTree = "<group>"; };
 		405F07D62359534B007D11BD /* processingDef.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = processingDef.h; path = include/processingDef.h; sourceTree = "<group>"; };
 		406DB8C821C6D3AF007C8A8A /* libprocessors.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libprocessors.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		407E3503235A8D1A003265AB /* MCParticle.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MCParticle.cxx; path = src/MCParticle.cxx; sourceTree = "<group>"; };
+		407E3504235A8D1B003265AB /* MCParticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCParticle.h; path = include/MCParticle.h; sourceTree = "<group>"; };
 		408D7D1A21C401FF006556DB /* hpstr_event.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = hpstr_event.xcconfig; sourceTree = "<group>"; };
 		40911CA3234D1DAB006AD16F /* RawSvtHit.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RawSvtHit.cxx; path = src/RawSvtHit.cxx; sourceTree = "<group>"; };
 		40911CA4234D1DAB006AD16F /* RawSvtHit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RawSvtHit.h; path = include/RawSvtHit.h; sourceTree = "<group>"; };
@@ -367,6 +371,8 @@
 		40D3000621C3486700381AF5 /* event */ = {
 			isa = PBXGroup;
 			children = (
+				407E3503235A8D1A003265AB /* MCParticle.cxx */,
+				407E3504235A8D1B003265AB /* MCParticle.h */,
 				40E5D00C2358B5180050FB57 /* TSData.cxx */,
 				40E5D00E2358B5180050FB57 /* TSData.h */,
 				40E5D00D2358B5180050FB57 /* Vertex.cxx */,
@@ -478,6 +484,7 @@
 				40D3002921C3491500381AF5 /* Collections.h in Headers */,
 				40DA52D321C428A20035D296 /* EventHeader.h in Headers */,
 				40D3002821C3491500381AF5 /* Event.h in Headers */,
+				407E3506235A8D1B003265AB /* MCParticle.h in Headers */,
 				40D3002C21C3491500381AF5 /* EventDef.h in Headers */,
 				40D3002D21C3491500381AF5 /* EventLinkDef.h in Headers */,
 				40DA52D221C428A20035D296 /* TriggerData.h in Headers */,
@@ -787,6 +794,7 @@
 				40E5D0122358B5180050FB57 /* TSData.cxx in Sources */,
 				40DA52CE21C428970035D296 /* TriggerData.cxx in Sources */,
 				40E5D0132358B5180050FB57 /* Vertex.cxx in Sources */,
+				407E3505235A8D1B003265AB /* MCParticle.cxx in Sources */,
 				40D3001D21C3490500381AF5 /* CalCluster.cxx in Sources */,
 				40911CB0234F65A8006AD16F /* HpsEvent.cxx in Sources */,
 			);
