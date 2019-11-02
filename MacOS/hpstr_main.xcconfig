@@ -5,7 +5,7 @@
 //  Created by Maurik Holtrop on 6/4/10.
 //  Copyright 2010 University of New Hampshire. All rights reserved.
 //
-#include "../master.xcconfig"
+#include "master.xcconfig"
 PRODUCT_NAME=${TARGET_NAME} 
 EXECUTABLE_PREFIX=
 

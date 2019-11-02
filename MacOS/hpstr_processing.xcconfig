@@ -4,7 +4,7 @@
 //
 //  Created by Maurik Holtrop on 12/14/18.
 //
-#include "../master.xcconfig"
+#include "master.xcconfig"
 ///////////////////////////////////////////////////////////////////////
 // Override ROOT
 //

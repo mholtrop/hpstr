@@ -3,16 +3,42 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		405F07D7235954ED007D11BD /* processingDef.h in Sources */ = {isa = PBXBuildFile; fileRef = 405F07D62359534B007D11BD /* processingDef.h */; };
-		407D81E6235A65350005D4E1 /* hpstr.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 405F07CE23591EF7007D11BD /* hpstr.cxx */; };
-		407D81E7235A65380005D4E1 /* ConfigurePython.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 405F07CD23591EF7007D11BD /* ConfigurePython.cxx */; };
 		407E34FF235A6647003265AB /* libprocessing.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 40BC150D21C6F0F7002B95DF /* libprocessing.dylib */; };
 		407E3505235A8D1B003265AB /* MCParticle.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 407E3503235A8D1A003265AB /* MCParticle.cxx */; };
 		407E3506235A8D1B003265AB /* MCParticle.h in Headers */ = {isa = PBXBuildFile; fileRef = 407E3504235A8D1B003265AB /* MCParticle.h */; };
+		409014B5236DBDAD00236729 /* HistoManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 409014A9236DBDAC00236729 /* HistoManager.h */; };
+		409014B6236DBDAD00236729 /* TrackHistos.h in Headers */ = {isa = PBXBuildFile; fileRef = 409014AA236DBDAC00236729 /* TrackHistos.h */; };
+		409014B7236DBDAD00236729 /* ClusterHistos.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 409014AB236DBDAC00236729 /* ClusterHistos.cxx */; };
+		409014B8236DBDAD00236729 /* ModuleMapper.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 409014AC236DBDAD00236729 /* ModuleMapper.cxx */; };
+		409014B9236DBDAD00236729 /* TrackHistos.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 409014AD236DBDAD00236729 /* TrackHistos.cxx */; };
+		409014BA236DBDAD00236729 /* MCAnaHistos.h in Headers */ = {isa = PBXBuildFile; fileRef = 409014AE236DBDAD00236729 /* MCAnaHistos.h */; };
+		409014BB236DBDAD00236729 /* HistoManager.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 409014AF236DBDAD00236729 /* HistoManager.cxx */; };
+		409014BC236DBDAD00236729 /* ModuleMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 409014B0236DBDAD00236729 /* ModuleMapper.h */; };
+		409014BD236DBDAD00236729 /* ClusterHistos.h in Headers */ = {isa = PBXBuildFile; fileRef = 409014B1236DBDAD00236729 /* ClusterHistos.h */; };
+		409014BE236DBDAD00236729 /* MCAnaHistos.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 409014B2236DBDAD00236729 /* MCAnaHistos.cxx */; };
+		409014BF236DBDAD00236729 /* RecoHitAnaHistos.h in Headers */ = {isa = PBXBuildFile; fileRef = 409014B3236DBDAD00236729 /* RecoHitAnaHistos.h */; };
+		409014C0236DBDAD00236729 /* RecoHitAnaHistos.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 409014B4236DBDAD00236729 /* RecoHitAnaHistos.cxx */; };
+		409014C5236DBE5F00236729 /* MCEcalHit.h in Headers */ = {isa = PBXBuildFile; fileRef = 409014C1236DBE5F00236729 /* MCEcalHit.h */; };
+		409014C6236DBE5F00236729 /* MCTrackerHit.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 409014C2236DBE5F00236729 /* MCTrackerHit.cxx */; };
+		409014C7236DBE5F00236729 /* MCEcalHit.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 409014C3236DBE5F00236729 /* MCEcalHit.cxx */; };
+		409014C8236DBE5F00236729 /* MCTrackerHit.h in Headers */ = {isa = PBXBuildFile; fileRef = 409014C4236DBE5F00236729 /* MCTrackerHit.h */; };
+		409014D5236DBECD00236729 /* MCAnaProcessor.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 409014C9236DBECC00236729 /* MCAnaProcessor.cxx */; };
+		409014D6236DBECD00236729 /* ClusterOnTrackAnaProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = 409014CA236DBECD00236729 /* ClusterOnTrackAnaProcessor.h */; };
+		409014D7236DBECD00236729 /* MCEcalHitProcessor.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 409014CB236DBECD00236729 /* MCEcalHitProcessor.cxx */; };
+		409014D8236DBECD00236729 /* MCParticleProcessor.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 409014CC236DBECD00236729 /* MCParticleProcessor.cxx */; };
+		409014D9236DBECD00236729 /* MCEcalHitProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = 409014CD236DBECD00236729 /* MCEcalHitProcessor.h */; };
+		409014DA236DBECD00236729 /* MCParticleProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = 409014CE236DBECD00236729 /* MCParticleProcessor.h */; };
+		409014DB236DBECD00236729 /* MCTrackerHitProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = 409014CF236DBECD00236729 /* MCTrackerHitProcessor.h */; };
+		409014DC236DBECD00236729 /* ClusterOnTrackAnaProcessor.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 409014D0236DBECD00236729 /* ClusterOnTrackAnaProcessor.cxx */; };
+		409014DD236DBECD00236729 /* RecoHitAnaProcessor.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 409014D1236DBECD00236729 /* RecoHitAnaProcessor.cxx */; };
+		409014DE236DBECD00236729 /* RecoHitAnaProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = 409014D2236DBECD00236729 /* RecoHitAnaProcessor.h */; };
+		409014DF236DBECD00236729 /* MCTrackerHitProcessor.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 409014D3236DBECD00236729 /* MCTrackerHitProcessor.cxx */; };
+		409014E0236DBECD00236729 /* MCAnaProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = 409014D4236DBECD00236729 /* MCAnaProcessor.h */; };
 		40911CA5234D1DAB006AD16F /* RawSvtHit.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 40911CA3234D1DAB006AD16F /* RawSvtHit.cxx */; };
 		40911CA6234D1DAB006AD16F /* RawSvtHit.h in Headers */ = {isa = PBXBuildFile; fileRef = 40911CA4234D1DAB006AD16F /* RawSvtHit.h */; };
 		40911CA9234D1DCC006AD16F /* SvtRawDataProcessor.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 40911CA7234D1DCC006AD16F /* SvtRawDataProcessor.cxx */; };
@@ -68,14 +94,6 @@
 		40E4976E235388DC00C18547 /* IEventFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 40E49768235388DB00C18547 /* IEventFile.h */; };
 		40E4976F235388DC00C18547 /* HpsEventFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 40E49769235388DB00C18547 /* HpsEventFile.h */; };
 		40E4977523538D4E00C18547 /* libprocessing.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 40BC150D21C6F0F7002B95DF /* libprocessing.dylib */; };
-		40E4979523538E0B00C18547 /* ClusterHistos.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 40E4977923538D8600C18547 /* ClusterHistos.cxx */; };
-		40E4979623538E1300C18547 /* ClusterHistos.h in Headers */ = {isa = PBXBuildFile; fileRef = 40E4977A23538D8600C18547 /* ClusterHistos.h */; };
-		40E4979723538E1300C18547 /* HistoManager.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 40E4977723538D8600C18547 /* HistoManager.cxx */; };
-		40E4979823538E1300C18547 /* HistoManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 40E4977B23538D8600C18547 /* HistoManager.h */; };
-		40E4979923538E1300C18547 /* ModuleMapper.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 40E4977D23538D8600C18547 /* ModuleMapper.cxx */; };
-		40E4979A23538E1300C18547 /* ModuleMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 40E4977623538D8600C18547 /* ModuleMapper.h */; };
-		40E4979B23538E1300C18547 /* TrackHistos.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 40E4977823538D8600C18547 /* TrackHistos.cxx */; };
-		40E4979C23538E1300C18547 /* TrackHistos.h in Headers */ = {isa = PBXBuildFile; fileRef = 40E4977C23538D8600C18547 /* TrackHistos.h */; };
 		40E4979D23538EDD00C18547 /* libevent.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D3000421C3486700381AF5 /* libevent.dylib */; };
 		40E497A023538F3B00C18547 /* libanalysis.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 40E4978A23538DDD00C18547 /* libanalysis.dylib */; };
 		40E5D0102358B5180050FB57 /* VTPData.h in Headers */ = {isa = PBXBuildFile; fileRef = 40E5D00A2358B5170050FB57 /* VTPData.h */; };
@@ -140,15 +158,40 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		405F07CC23591EF7007D11BD /* ConfigurePython.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConfigurePython.h; path = execs/include/ConfigurePython.h; sourceTree = "<group>"; };
-		405F07CD23591EF7007D11BD /* ConfigurePython.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ConfigurePython.cxx; path = execs/src/ConfigurePython.cxx; sourceTree = "<group>"; };
-		405F07CE23591EF7007D11BD /* hpstr.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = hpstr.cxx; path = execs/src/hpstr.cxx; sourceTree = "<group>"; };
 		405F07D4235930FC007D11BD /* processingLinkDef.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = processingLinkDef.h; path = include/processingLinkDef.h; sourceTree = "<group>"; };
 		405F07D62359534B007D11BD /* processingDef.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = processingDef.h; path = include/processingDef.h; sourceTree = "<group>"; };
 		406DB8C821C6D3AF007C8A8A /* libprocessors.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libprocessors.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		407E3503235A8D1A003265AB /* MCParticle.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MCParticle.cxx; path = src/MCParticle.cxx; sourceTree = "<group>"; };
 		407E3504235A8D1B003265AB /* MCParticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCParticle.h; path = include/MCParticle.h; sourceTree = "<group>"; };
 		408D7D1A21C401FF006556DB /* hpstr_event.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = hpstr_event.xcconfig; sourceTree = "<group>"; };
+		409014A9236DBDAC00236729 /* HistoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoManager.h; path = include/HistoManager.h; sourceTree = "<group>"; };
+		409014AA236DBDAC00236729 /* TrackHistos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TrackHistos.h; path = include/TrackHistos.h; sourceTree = "<group>"; };
+		409014AB236DBDAC00236729 /* ClusterHistos.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ClusterHistos.cxx; path = src/ClusterHistos.cxx; sourceTree = "<group>"; };
+		409014AC236DBDAD00236729 /* ModuleMapper.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ModuleMapper.cxx; path = src/ModuleMapper.cxx; sourceTree = "<group>"; };
+		409014AD236DBDAD00236729 /* TrackHistos.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TrackHistos.cxx; path = src/TrackHistos.cxx; sourceTree = "<group>"; };
+		409014AE236DBDAD00236729 /* MCAnaHistos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCAnaHistos.h; path = include/MCAnaHistos.h; sourceTree = "<group>"; };
+		409014AF236DBDAD00236729 /* HistoManager.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HistoManager.cxx; path = src/HistoManager.cxx; sourceTree = "<group>"; };
+		409014B0236DBDAD00236729 /* ModuleMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModuleMapper.h; path = include/ModuleMapper.h; sourceTree = "<group>"; };
+		409014B1236DBDAD00236729 /* ClusterHistos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ClusterHistos.h; path = include/ClusterHistos.h; sourceTree = "<group>"; };
+		409014B2236DBDAD00236729 /* MCAnaHistos.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MCAnaHistos.cxx; path = src/MCAnaHistos.cxx; sourceTree = "<group>"; };
+		409014B3236DBDAD00236729 /* RecoHitAnaHistos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecoHitAnaHistos.h; path = include/RecoHitAnaHistos.h; sourceTree = "<group>"; };
+		409014B4236DBDAD00236729 /* RecoHitAnaHistos.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RecoHitAnaHistos.cxx; path = src/RecoHitAnaHistos.cxx; sourceTree = "<group>"; };
+		409014C1236DBE5F00236729 /* MCEcalHit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCEcalHit.h; path = include/MCEcalHit.h; sourceTree = "<group>"; };
+		409014C2236DBE5F00236729 /* MCTrackerHit.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MCTrackerHit.cxx; path = src/MCTrackerHit.cxx; sourceTree = "<group>"; };
+		409014C3236DBE5F00236729 /* MCEcalHit.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MCEcalHit.cxx; path = src/MCEcalHit.cxx; sourceTree = "<group>"; };
+		409014C4236DBE5F00236729 /* MCTrackerHit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCTrackerHit.h; path = include/MCTrackerHit.h; sourceTree = "<group>"; };
+		409014C9236DBECC00236729 /* MCAnaProcessor.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MCAnaProcessor.cxx; path = src/MCAnaProcessor.cxx; sourceTree = "<group>"; };
+		409014CA236DBECD00236729 /* ClusterOnTrackAnaProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ClusterOnTrackAnaProcessor.h; path = include/ClusterOnTrackAnaProcessor.h; sourceTree = "<group>"; };
+		409014CB236DBECD00236729 /* MCEcalHitProcessor.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MCEcalHitProcessor.cxx; path = src/MCEcalHitProcessor.cxx; sourceTree = "<group>"; };
+		409014CC236DBECD00236729 /* MCParticleProcessor.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MCParticleProcessor.cxx; path = src/MCParticleProcessor.cxx; sourceTree = "<group>"; };
+		409014CD236DBECD00236729 /* MCEcalHitProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCEcalHitProcessor.h; path = include/MCEcalHitProcessor.h; sourceTree = "<group>"; };
+		409014CE236DBECD00236729 /* MCParticleProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCParticleProcessor.h; path = include/MCParticleProcessor.h; sourceTree = "<group>"; };
+		409014CF236DBECD00236729 /* MCTrackerHitProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCTrackerHitProcessor.h; path = include/MCTrackerHitProcessor.h; sourceTree = "<group>"; };
+		409014D0236DBECD00236729 /* ClusterOnTrackAnaProcessor.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ClusterOnTrackAnaProcessor.cxx; path = src/ClusterOnTrackAnaProcessor.cxx; sourceTree = "<group>"; };
+		409014D1236DBECD00236729 /* RecoHitAnaProcessor.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RecoHitAnaProcessor.cxx; path = src/RecoHitAnaProcessor.cxx; sourceTree = "<group>"; };
+		409014D2236DBECD00236729 /* RecoHitAnaProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecoHitAnaProcessor.h; path = include/RecoHitAnaProcessor.h; sourceTree = "<group>"; };
+		409014D3236DBECD00236729 /* MCTrackerHitProcessor.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MCTrackerHitProcessor.cxx; path = src/MCTrackerHitProcessor.cxx; sourceTree = "<group>"; };
+		409014D4236DBECD00236729 /* MCAnaProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCAnaProcessor.h; path = include/MCAnaProcessor.h; sourceTree = "<group>"; };
 		40911CA3234D1DAB006AD16F /* RawSvtHit.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RawSvtHit.cxx; path = src/RawSvtHit.cxx; sourceTree = "<group>"; };
 		40911CA4234D1DAB006AD16F /* RawSvtHit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RawSvtHit.h; path = include/RawSvtHit.h; sourceTree = "<group>"; };
 		40911CA7234D1DCC006AD16F /* SvtRawDataProcessor.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SvtRawDataProcessor.cxx; path = src/SvtRawDataProcessor.cxx; sourceTree = "<group>"; };
@@ -168,8 +211,6 @@
 		40A076CE21C41A4000A29625 /* ProcessorFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ProcessorFactory.h; path = include/ProcessorFactory.h; sourceTree = "<group>"; };
 		40A076D021C41A4B00A29625 /* HpstrConf.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; name = HpstrConf.py; path = python/HpstrConf.py; sourceTree = "<group>"; };
 		40A9155C235A5FF7005483AD /* hpstr */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = hpstr; sourceTree = BUILT_PRODUCTS_DIR; };
-		40AA4B7C223DE7B500777A43 /* rawSvtHits_cfg.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = rawSvtHits_cfg.py; path = processors/config/rawSvtHits_cfg.py; sourceTree = "<group>"; };
-		40AA4B7D223DE7B500777A43 /* dst.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = dst.py; path = processors/config/dst.py; sourceTree = "<group>"; };
 		40AE3D31234F6D9A00178209 /* HPSEventProcessor.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HPSEventProcessor.cxx; path = src/HPSEventProcessor.cxx; sourceTree = "<group>"; };
 		40AE3D33234F6D9A00178209 /* TrackingProcessor.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TrackingProcessor.cxx; path = src/TrackingProcessor.cxx; sourceTree = "<group>"; };
 		40AE3D35234F6D9B00178209 /* RefittedTracksProcessor.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RefittedTracksProcessor.cxx; path = src/RefittedTracksProcessor.cxx; sourceTree = "<group>"; };
@@ -211,14 +252,6 @@
 		40E497622353885300C18547 /* HpsEventFile.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HpsEventFile.cxx; path = src/HpsEventFile.cxx; sourceTree = "<group>"; };
 		40E49768235388DB00C18547 /* IEventFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IEventFile.h; path = include/IEventFile.h; sourceTree = "<group>"; };
 		40E49769235388DB00C18547 /* HpsEventFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HpsEventFile.h; path = include/HpsEventFile.h; sourceTree = "<group>"; };
-		40E4977623538D8600C18547 /* ModuleMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModuleMapper.h; path = analysis/include/ModuleMapper.h; sourceTree = "<group>"; };
-		40E4977723538D8600C18547 /* HistoManager.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HistoManager.cxx; path = analysis/src/HistoManager.cxx; sourceTree = "<group>"; };
-		40E4977823538D8600C18547 /* TrackHistos.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TrackHistos.cxx; path = analysis/src/TrackHistos.cxx; sourceTree = "<group>"; };
-		40E4977923538D8600C18547 /* ClusterHistos.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ClusterHistos.cxx; path = analysis/src/ClusterHistos.cxx; sourceTree = "<group>"; };
-		40E4977A23538D8600C18547 /* ClusterHistos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ClusterHistos.h; path = analysis/include/ClusterHistos.h; sourceTree = "<group>"; };
-		40E4977B23538D8600C18547 /* HistoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoManager.h; path = analysis/include/HistoManager.h; sourceTree = "<group>"; };
-		40E4977C23538D8600C18547 /* TrackHistos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TrackHistos.h; path = analysis/include/TrackHistos.h; sourceTree = "<group>"; };
-		40E4977D23538D8600C18547 /* ModuleMapper.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ModuleMapper.cxx; path = analysis/src/ModuleMapper.cxx; sourceTree = "<group>"; };
 		40E4978A23538DDD00C18547 /* libanalysis.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libanalysis.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		40E5D00A2358B5170050FB57 /* VTPData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VTPData.h; path = include/VTPData.h; sourceTree = "<group>"; };
 		40E5D00B2358B5170050FB57 /* VTPData.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VTPData.cxx; path = src/VTPData.cxx; sourceTree = "<group>"; };
@@ -277,6 +310,18 @@
 		406DB8C921C6D3AF007C8A8A /* processors */ = {
 			isa = PBXGroup;
 			children = (
+				409014D0236DBECD00236729 /* ClusterOnTrackAnaProcessor.cxx */,
+				409014CA236DBECD00236729 /* ClusterOnTrackAnaProcessor.h */,
+				409014C9236DBECC00236729 /* MCAnaProcessor.cxx */,
+				409014D4236DBECD00236729 /* MCAnaProcessor.h */,
+				409014CB236DBECD00236729 /* MCEcalHitProcessor.cxx */,
+				409014CD236DBECD00236729 /* MCEcalHitProcessor.h */,
+				409014CC236DBECD00236729 /* MCParticleProcessor.cxx */,
+				409014CE236DBECD00236729 /* MCParticleProcessor.h */,
+				409014D3236DBECD00236729 /* MCTrackerHitProcessor.cxx */,
+				409014CF236DBECD00236729 /* MCTrackerHitProcessor.h */,
+				409014D1236DBECD00236729 /* RecoHitAnaProcessor.cxx */,
+				409014D2236DBECD00236729 /* RecoHitAnaProcessor.h */,
 				40AE3D31234F6D9A00178209 /* HPSEventProcessor.cxx */,
 				40AE3D37234F6D9B00178209 /* HPSEventProcessor.h */,
 				40AE3D35234F6D9B00178209 /* RefittedTracksProcessor.cxx */,
@@ -296,7 +341,8 @@
 				40BC14FA21C6D422002B95DF /* SvtDataProcessor.cxx */,
 				40BC14FF21C6D431002B95DF /* SvtDataProcessor.h */,
 			);
-			path = processors;
+			name = processors;
+			path = ../processors;
 			sourceTree = "<group>";
 		};
 		40A076BB21C419F700A29625 /* processing */ = {
@@ -319,41 +365,35 @@
 				405F07D4235930FC007D11BD /* processingLinkDef.h */,
 				405F07D62359534B007D11BD /* processingDef.h */,
 			);
-			path = processing;
-			sourceTree = "<group>";
-		};
-		40AA4B7B223DE79800777A43 /* python */ = {
-			isa = PBXGroup;
-			children = (
-				40AA4B7D223DE7B500777A43 /* dst.py */,
-				40AA4B7C223DE7B500777A43 /* rawSvtHits_cfg.py */,
-			);
-			name = python;
+			name = processing;
+			path = ../processing;
 			sourceTree = "<group>";
 		};
 		40AE3D45234F808D00178209 /* analysis */ = {
 			isa = PBXGroup;
 			children = (
-				40E4977923538D8600C18547 /* ClusterHistos.cxx */,
-				40E4977A23538D8600C18547 /* ClusterHistos.h */,
-				40E4977723538D8600C18547 /* HistoManager.cxx */,
-				40E4977B23538D8600C18547 /* HistoManager.h */,
-				40E4977D23538D8600C18547 /* ModuleMapper.cxx */,
-				40E4977623538D8600C18547 /* ModuleMapper.h */,
-				40E4977823538D8600C18547 /* TrackHistos.cxx */,
-				40E4977C23538D8600C18547 /* TrackHistos.h */,
+				409014AB236DBDAC00236729 /* ClusterHistos.cxx */,
+				409014B1236DBDAD00236729 /* ClusterHistos.h */,
+				409014AF236DBDAD00236729 /* HistoManager.cxx */,
+				409014A9236DBDAC00236729 /* HistoManager.h */,
+				409014B2236DBDAD00236729 /* MCAnaHistos.cxx */,
+				409014AE236DBDAD00236729 /* MCAnaHistos.h */,
+				409014AC236DBDAD00236729 /* ModuleMapper.cxx */,
+				409014B0236DBDAD00236729 /* ModuleMapper.h */,
+				409014B4236DBDAD00236729 /* RecoHitAnaHistos.cxx */,
+				409014B3236DBDAD00236729 /* RecoHitAnaHistos.h */,
+				409014AD236DBDAD00236729 /* TrackHistos.cxx */,
+				409014AA236DBDAC00236729 /* TrackHistos.h */,
 			);
 			name = analysis;
+			path = ../analysis;
 			sourceTree = "<group>";
 		};
-		40BC151821C6F169002B95DF /* hpstr */ = {
+		40C56FC9236DC07200B5CF80 /* Exec */ = {
 			isa = PBXGroup;
 			children = (
-				405F07CD23591EF7007D11BD /* ConfigurePython.cxx */,
-				405F07CC23591EF7007D11BD /* ConfigurePython.h */,
-				405F07CE23591EF7007D11BD /* hpstr.cxx */,
 			);
-			name = hpstr;
+			name = Exec;
 			sourceTree = "<group>";
 		};
 		40D3000521C3486700381AF5 /* Products */ = {
@@ -371,6 +411,10 @@
 		40D3000621C3486700381AF5 /* event */ = {
 			isa = PBXGroup;
 			children = (
+				409014C3236DBE5F00236729 /* MCEcalHit.cxx */,
+				409014C1236DBE5F00236729 /* MCEcalHit.h */,
+				409014C2236DBE5F00236729 /* MCTrackerHit.cxx */,
+				409014C4236DBE5F00236729 /* MCTrackerHit.h */,
 				407E3503235A8D1A003265AB /* MCParticle.cxx */,
 				407E3504235A8D1B003265AB /* MCParticle.h */,
 				40E5D00C2358B5180050FB57 /* TSData.cxx */,
@@ -404,19 +448,19 @@
 				40DA52CC21C428970035D296 /* TriggerData.cxx */,
 				40DA52D021C428A20035D296 /* TriggerData.h */,
 			);
-			path = event;
-			sourceTree = "<group>";
+			name = event;
+			path = ../event;
+			sourceTree = SOURCE_ROOT;
 		};
 		40D3FFF321C3475800381AF5 = {
 			isa = PBXGroup;
 			children = (
-				40AA4B7B223DE79800777A43 /* python */,
 				40D3FFFA21C3476900381AF5 /* Config */,
-				40BC151821C6F169002B95DF /* hpstr */,
 				40AE3D45234F808D00178209 /* analysis */,
 				40D3000621C3486700381AF5 /* event */,
 				40A076BB21C419F700A29625 /* processing */,
 				406DB8C921C6D3AF007C8A8A /* processors */,
+				40C56FC9236DC07200B5CF80 /* Exec */,
 				40DA52CA21C428450035D296 /* Frameworks */,
 				40D3000521C3486700381AF5 /* Products */,
 			);
@@ -430,7 +474,7 @@
 				40D3FFFE21C347B300381AF5 /* hpstr_main.xcconfig */,
 			);
 			name = Config;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		40DA52CA21C428450035D296 /* Frameworks */ = {
 			isa = PBXGroup;
@@ -447,14 +491,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				40911CAA234D1DCC006AD16F /* SvtRawDataProcessor.h in Headers */,
+				409014E0236DBECD00236729 /* MCAnaProcessor.h in Headers */,
 				40BC150621C6D431002B95DF /* EventProcessor.h in Headers */,
 				40BC150521C6D431002B95DF /* ECalDataProcessor.h in Headers */,
 				40AE3D43234F6D9B00178209 /* utilities.h in Headers */,
+				409014D6236DBECD00236729 /* ClusterOnTrackAnaProcessor.h in Headers */,
 				40AE3D42234F6D9B00178209 /* RefittedTracksProcessor.h in Headers */,
 				40AE3D40234F6D9B00178209 /* TrackingProcessor.h in Headers */,
 				40BC150321C6D431002B95DF /* SvtDataProcessor.h in Headers */,
 				40AE3D41234F6D9B00178209 /* HPSEventProcessor.h in Headers */,
 				40BC150421C6D431002B95DF /* ParticleProcessor.h in Headers */,
+				409014DB236DBECD00236729 /* MCTrackerHitProcessor.h in Headers */,
+				409014D9236DBECD00236729 /* MCEcalHitProcessor.h in Headers */,
+				409014DA236DBECD00236729 /* MCParticleProcessor.h in Headers */,
+				409014DE236DBECD00236729 /* RecoHitAnaProcessor.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,7 +533,9 @@
 				40911CAE234F65A8006AD16F /* HpsEvent.h in Headers */,
 				40D3002921C3491500381AF5 /* Collections.h in Headers */,
 				40DA52D321C428A20035D296 /* EventHeader.h in Headers */,
+				409014C5236DBE5F00236729 /* MCEcalHit.h in Headers */,
 				40D3002821C3491500381AF5 /* Event.h in Headers */,
+				409014C8236DBE5F00236729 /* MCTrackerHit.h in Headers */,
 				407E3506235A8D1B003265AB /* MCParticle.h in Headers */,
 				40D3002C21C3491500381AF5 /* EventDef.h in Headers */,
 				40D3002D21C3491500381AF5 /* EventLinkDef.h in Headers */,
@@ -497,10 +549,12 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40E4979823538E1300C18547 /* HistoManager.h in Headers */,
-				40E4979A23538E1300C18547 /* ModuleMapper.h in Headers */,
-				40E4979C23538E1300C18547 /* TrackHistos.h in Headers */,
-				40E4979623538E1300C18547 /* ClusterHistos.h in Headers */,
+				409014B6236DBDAD00236729 /* TrackHistos.h in Headers */,
+				409014BD236DBDAD00236729 /* ClusterHistos.h in Headers */,
+				409014BF236DBDAD00236729 /* RecoHitAnaHistos.h in Headers */,
+				409014BA236DBDAD00236729 /* MCAnaHistos.h in Headers */,
+				409014B5236DBDAD00236729 /* HistoManager.h in Headers */,
+				409014BC236DBDAD00236729 /* ModuleMapper.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -626,7 +680,7 @@
 				};
 			};
 			buildConfigurationList = 40D3FFF721C3475800381AF5 /* Build configuration list for PBXProject "hpstr" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 11.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -680,7 +734,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\necho \"Copy ${FULL_PRODUCT_NAME} to final destination.\"\ncp -v ${BUILT_PRODUCTS_DIR}/${FULL_PRODUCT_NAME} ${INSTALL_DIR}\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\necho \"Copy ${FULL_PRODUCT_NAME} to final destination: ${INSTALL_DIR}\"\ncp -v ${BUILT_PRODUCTS_DIR}/${FULL_PRODUCT_NAME} ${INSTALL_DIR}\n";
 			showEnvVarsInLog = 0;
 		};
 		40D02EA921C6F97600ABDC88 /* ShellScript */ = {
@@ -747,11 +801,17 @@
 				40AE3D3D234F6D9B00178209 /* TrackingProcessor.cxx in Sources */,
 				40AE3D44234F6D9B00178209 /* utilities.cxx in Sources */,
 				40AE3D3F234F6D9B00178209 /* RefittedTracksProcessor.cxx in Sources */,
+				409014DC236DBECD00236729 /* ClusterOnTrackAnaProcessor.cxx in Sources */,
+				409014D8236DBECD00236729 /* MCParticleProcessor.cxx in Sources */,
 				40BC14FD21C6D422002B95DF /* ECalDataProcessor.cxx in Sources */,
 				40BC14FC21C6D422002B95DF /* ParticleProcessor.cxx in Sources */,
 				40911CA9234D1DCC006AD16F /* SvtRawDataProcessor.cxx in Sources */,
+				409014D5236DBECD00236729 /* MCAnaProcessor.cxx in Sources */,
 				40BC14FB21C6D422002B95DF /* EventProcessor.cxx in Sources */,
 				40AE3D3B234F6D9B00178209 /* HPSEventProcessor.cxx in Sources */,
+				409014DD236DBECD00236729 /* RecoHitAnaProcessor.cxx in Sources */,
+				409014DF236DBECD00236729 /* MCTrackerHitProcessor.cxx in Sources */,
+				409014D7236DBECD00236729 /* MCEcalHitProcessor.cxx in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -759,8 +819,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				407D81E7235A65380005D4E1 /* ConfigurePython.cxx in Sources */,
-				407D81E6235A65350005D4E1 /* hpstr.cxx in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -784,6 +842,8 @@
 			files = (
 				40E49760235383CC00C18547 /* Event.h in Sources */,
 				40E5D0112358B5180050FB57 /* VTPData.cxx in Sources */,
+				409014C7236DBE5F00236729 /* MCEcalHit.cxx in Sources */,
+				409014C6236DBE5F00236729 /* MCTrackerHit.cxx in Sources */,
 				40D3001A21C3490500381AF5 /* Event.cxx in Sources */,
 				40D3001921C3490500381AF5 /* TrackerHit.cxx in Sources */,
 				40D3001821C3490500381AF5 /* CalHit.cxx in Sources */,
@@ -804,10 +864,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40E4979523538E0B00C18547 /* ClusterHistos.cxx in Sources */,
-				40E4979923538E1300C18547 /* ModuleMapper.cxx in Sources */,
-				40E4979723538E1300C18547 /* HistoManager.cxx in Sources */,
-				40E4979B23538E1300C18547 /* TrackHistos.cxx in Sources */,
+				409014BE236DBDAD00236729 /* MCAnaHistos.cxx in Sources */,
+				409014C0236DBDAD00236729 /* RecoHitAnaHistos.cxx in Sources */,
+				409014B8236DBDAD00236729 /* ModuleMapper.cxx in Sources */,
+				409014B9236DBDAD00236729 /* TrackHistos.cxx in Sources */,
+				409014B7236DBDAD00236729 /* ClusterHistos.cxx in Sources */,
+				409014BB236DBDAD00236729 /* HistoManager.cxx in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
