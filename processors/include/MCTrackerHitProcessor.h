@@ -2,47 +2,39 @@
  *
  */
 
-#ifndef __TRACKING_PROCESSOR_H__
-#define __TRACKING_PROCESSOR_H__
+#ifndef __MCTRACKERHIT_PROCESSOR_H__
+#define __MCTRACKERHIT_PROCESSOR_H__
 
 //-----------------//
 //   C++  StdLib   //
 //-----------------//
 #include <iostream>
+#include <algorithm>
 #include <string>
 
 //----------//
 //   LCIO   //
 //----------//
 #include <EVENT/LCCollection.h>
-#include <EVENT/Track.h>
-#include <EVENT/TrackerHit.h>
-#include <EVENT/TrackState.h>
-#include <EVENT/TrackerRawData.h>
-#include <IMPL/LCGenericObjectImpl.h>
-#include <IMPL/TrackerHitImpl.h>
-#include <UTIL/LCRelationNavigator.h>
+#include <EVENT/SimTrackerHit.h>
+#include <EVENT/MCParticle.h>
 #include <UTIL/BitField64.h>
 
 //----------//
 //   ROOT   //
 //----------//
 #include "TClonesArray.h"
+#include "TTree.h"
 
 //-----------//
 //   hpstr   //
 //-----------//
 #include "Collections.h"
 #include "Processor.h"
-#include "Track.h"
-#include "TrackerHit.h"
+#include "MCTrackerHit.h"
 #include "Event.h"
-#include "RawSvtHit.h"
 
-// Forward declarations
-class TTree; 
-
-class TrackingProcessor : public Processor { 
+class MCTrackerHitProcessor : public Processor { 
 
     public: 
 
@@ -53,10 +45,10 @@ class TrackingProcessor : public Processor {
          * @param process The Process class associated with Processor, provided
          *                by the processing framework.
          */
-        TrackingProcessor(const std::string& name, Process& process); 
+        MCTrackerHitProcessor(const std::string& name, Process& process); 
 
         /** Destructor */
-        ~TrackingProcessor(); 
+        ~MCTrackerHitProcessor(); 
 
         /**
          * Process the event and put new data products into it.
@@ -79,19 +71,8 @@ class TrackingProcessor : public Processor {
     private: 
 
         /** Container to hold all TrackerHit objects. */
-        std::vector<TrackerHit*> hits_{}; 
+        TClonesArray* trackerhits_{nullptr}; 
 
-        /** Container to hold all Track objects. */
-        std::vector<Track*> tracks_{};
+}; // MCTrackerHitProcessor
 
-        /** Container to hold all raw hits objecs. */
-        std::vector<RawSvtHit*> rawhits_{};
-        bool _debug{false};
-
-
-
-
-
-}; // Tracking Processor
-
-#endif // __TRACKING_PROCESSOR_H__
+#endif // __MCTRACKERHIT_PROCESSOR_H__
