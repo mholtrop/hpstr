@@ -69,6 +69,8 @@
 		40BC151D21C6F1A3002B95DF /* Processor.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 40A076BC21C41A3000A29625 /* Processor.cxx */; };
 		40BC151E21C6F1AA002B95DF /* ProcessorFactory.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 40A076C221C41A3000A29625 /* ProcessorFactory.cxx */; };
 		40D02EA821C6F92500ABDC88 /* libevent.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D3000421C3486700381AF5 /* libevent.dylib */; };
+		40D0B9DF236DC58D00AD5C98 /* hpstr.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 40D0B9DC236DC58D00AD5C98 /* hpstr.cxx */; };
+		40D0B9E0236DC58D00AD5C98 /* ConfigurePython.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 40D0B9DE236DC58D00AD5C98 /* ConfigurePython.cxx */; };
 		40D3001821C3490500381AF5 /* CalHit.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 40D3001221C3490500381AF5 /* CalHit.cxx */; };
 		40D3001921C3490500381AF5 /* TrackerHit.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 40D3001321C3490500381AF5 /* TrackerHit.cxx */; };
 		40D3001A21C3490500381AF5 /* Event.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 40D3001421C3490500381AF5 /* Event.cxx */; };
@@ -228,6 +230,9 @@
 		40BC150121C6D431002B95DF /* ECalDataProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ECalDataProcessor.h; path = include/ECalDataProcessor.h; sourceTree = "<group>"; };
 		40BC150221C6D431002B95DF /* EventProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventProcessor.h; path = include/EventProcessor.h; sourceTree = "<group>"; };
 		40BC150D21C6F0F7002B95DF /* libprocessing.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libprocessing.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		40D0B9DC236DC58D00AD5C98 /* hpstr.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = hpstr.cxx; path = ../processing/src/hpstr.cxx; sourceTree = "<group>"; };
+		40D0B9DD236DC58D00AD5C98 /* ConfigurePython.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ConfigurePython.h; path = ../processing/include/ConfigurePython.h; sourceTree = "<group>"; };
+		40D0B9DE236DC58D00AD5C98 /* ConfigurePython.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ConfigurePython.cxx; path = ../processing/src/ConfigurePython.cxx; sourceTree = "<group>"; };
 		40D3000421C3486700381AF5 /* libevent.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libevent.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		40D3001221C3490500381AF5 /* CalHit.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CalHit.cxx; path = src/CalHit.cxx; sourceTree = "<group>"; };
 		40D3001321C3490500381AF5 /* TrackerHit.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TrackerHit.cxx; path = src/TrackerHit.cxx; sourceTree = "<group>"; };
@@ -392,6 +397,9 @@
 		40C56FC9236DC07200B5CF80 /* Exec */ = {
 			isa = PBXGroup;
 			children = (
+				40D0B9DE236DC58D00AD5C98 /* ConfigurePython.cxx */,
+				40D0B9DD236DC58D00AD5C98 /* ConfigurePython.h */,
+				40D0B9DC236DC58D00AD5C98 /* hpstr.cxx */,
 			);
 			name = Exec;
 			sourceTree = "<group>";
@@ -819,6 +827,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40D0B9E0236DC58D00AD5C98 /* ConfigurePython.cxx in Sources */,
+				40D0B9DF236DC58D00AD5C98 /* hpstr.cxx in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
