@@ -21,6 +21,7 @@ EventFile::~EventFile() {}
 // Close out the previous event before moving on.
 void EventFile::FillEvent() {
     if (entry_ > 0) {
+        event_->getTree()->BranchRef(); // https://root.cern.ch/root/htmldoc/guides/users-guide/Trees.html 14.7.2
         event_->getTree()->Fill();
     }
 }
