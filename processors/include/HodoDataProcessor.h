@@ -82,7 +82,9 @@ public:
   UTIL::BitFieldValue getIdentifierFieldValue(std::string field, EVENT::CalorimeterHit* hit);
   
   /** vector containing all ECal hits. */
-  std::vector<HodoHit*> hits_;
+  // std::vector<HodoHit*> hits_;
+  TClonesArray *hits_{nullptr};
+  unsigned int n_hits{0};
   
   /** vector containing all ECal clusters. */
   std::vector<HodoCluster*> clusters_;

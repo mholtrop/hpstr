@@ -7,8 +7,12 @@
 #include "HodoDataProcessor.h"
 
 void HodoDataProcessor::initialize(TTree* tree) {
-  tree->Branch(hitCollRoot_.c_str(), &hits_);
+
+    std::cout << "New HodoDataProcess has split level = 101 \n";
+    hits_ = new TClonesArray("HodoHit",20);
+  tree->Branch(hitCollRoot_.c_str(), &hits_, 32000, 101);
   tree->Branch(clusCollRoot_.c_str(), &clusters_);
+  HodoHit *newhit = new HodoHit();
 }
 
 
@@ -32,9 +36,11 @@ void HodoDataProcessor::configure(const ParameterSet& parameters) {
 bool HodoDataProcessor::process(IEvent* ievent) {
   
   // Clean up. TODO:: new/delete is an inefficient way to go about all this. Fix with better memory use.
-  for(int i = 0; i < hits_.size(); i++) delete hits_.at(i);
+  // for(int i = 0; i < hits_->GetEntries(); i++) delete hits_->At(i);
+  hits_->Clear("C");
+  n_hits = 0;
   for(int i = 0; i < clusters_.size(); i++) delete clusters_.at(i);
-  hits_.clear();
+  hits_->Clear();
   clusters_.clear();
   
   // Interface to implementation cast. Not sure why we bother with an interface.
@@ -52,20 +58,26 @@ bool HodoDataProcessor::process(IEvent* ievent) {
   }
       
   // Loop through the hits and add them to the event.
-  for(int i=0; i< lcio_hits->getNumberOfElements(); ++i){
-    // Grab the hit from the collection and push it as a HodoHit object onto the vector<HodoHit *> hits_
-    IMPL::CalorimeterHitImpl *hit=static_cast<IMPL::CalorimeterHitImpl *>(lcio_hits->getElementAt(i));
+  for(int i=0; i< lcio_hits->getNumberOfElements(); ++i) {
+      // Grab the hit from the collection and push it as a HodoHit object onto the vector<HodoHit *> hits_
+      IMPL::CalorimeterHitImpl *hit = static_cast<IMPL::CalorimeterHitImpl *>(lcio_hits->getElementAt(i));
 
-    // TODO: This is inefficient, doing a new and delete on every hit for every event ==> implement proper memory use.
-    hits_.push_back(new HodoHit(
-                                getIdentifierFieldValue("ix", hit),
-                                getIdentifierFieldValue("iy", hit),
-                                getIdentifierFieldValue("layer", hit),
-                                getIdentifierFieldValue("hole", hit),
-                                hit->getEnergy(),
-                                hit->getTime()
-                                )
-                    );
+      // TODO: This is inefficient, doing a new and delete on every hit for every event ==> implement proper memory use.
+//    hits_.push_back(new HodoHit(
+//                                getIdentifierFieldValue("ix", hit),
+//                                getIdentifierFieldValue("iy", hit),
+//                                getIdentifierFieldValue("layer", hit),
+//                                getIdentifierFieldValue("hole", hit),
+//                                hit->getEnergy(),
+//                                hit->getTime()
+//                                )
+//                    );
+    auto hodo_hit = static_cast<HodoHit *>(hits_->ConstructedAt(n_hits++));
+    hodo_hit->setEnergy(hit->getEnergy());
+    hodo_hit->setTime(hit->getTime());
+    hodo_hit->setIndices(getIdentifierFieldValue("ix", hit),getIdentifierFieldValue("iy", hit));
+    hodo_hit->setLayer(getIdentifierFieldValue("layer", hit));
+    hodo_hit->setHole(getIdentifierFieldValue("hole", hit));
   }
   
   // Now deal with the clusters.
