@@ -45,6 +45,8 @@ if (PYTHON3)
 else()
   find_package(PythonLibs 2.7 REQUIRED)
 endif()
+include_directories(${PYTHON_INCLUDE_DIRS})
+message("Python include dirs: ${PYTHON_INCLUDE_DIRS}")
 
 message(STATUS "Python lib found at: ${PYTHON_LIBRARIES}")
 message(STATUS "Python include dir found at: ${PYTHON_INCLUDE_DIRS}")
